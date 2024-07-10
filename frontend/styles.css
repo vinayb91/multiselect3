@@ -1,62 +1,53 @@
+/* styles.css */
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+    margin: 20px;
 }
 
 .container {
-    width: 100%;
-    max-width: 400px;
+    width: 300px;
     margin: 0 auto;
-    position: relative;
 }
 
 .custom-select {
-    width: 100%;
     position: relative;
-    cursor: pointer;
+    width: 100%;
 }
 
 .select-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
-    align-items: center;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .select-input input {
     border: none;
     outline: none;
     flex: 1;
-    min-width: 150px;
+    padding: 5px;
+    font-size: 14px;
 }
 
 .select-dropdown {
-    display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
+    right: 0;
     border: 1px solid #ccc;
     border-top: none;
     background-color: #fff;
-    z-index: 1000;
     max-height: 200px;
     overflow-y: auto;
+    display: none;
+    z-index: 1000;
 }
 
 .select-dropdown ul {
-    list-style-type: none;
+    list-style: none;
     margin: 0;
     padding: 0;
 }
@@ -66,25 +57,33 @@ body {
     cursor: pointer;
 }
 
-.select-dropdown li:hover {
+.select-dropdown li:hover,
+.select-dropdown li.selected {
     background-color: #f0f0f0;
 }
 
-.select-dropdown .selected {
-    background-color: #e6f7ff;
-    color: #1890ff;
-    font-weight: bold;
+.select-all-container {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .selected-tag {
-    display: inline-block;
-    background-color: #e6f7ff;
-    color: #1890ff;
-    border: 1px solid #1890ff;
-    border-radius: 3px;
-    padding: 3px 6px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    font-size: 12px;
-    cursor: default;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    padding: 3px 8px;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.selected-tag:hover {
+    background-color: #ccc;
+}
+
+.selected-tag:after {
+    content: '×';
+    margin-left: 5px;
+    cursor: pointer;
 }

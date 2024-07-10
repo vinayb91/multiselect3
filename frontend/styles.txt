@@ -1,0 +1,131 @@
+.container {
+    position: relative;
+    width: 300px;
+    margin: 20px auto;
+}
+
+/* Custom select styling */
+.custom-select {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Input styling */
+.select-input {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 4px 4px 0 0;
+}
+
+.select-input input[type="text"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.select-input input[type="text"]::placeholder {
+    color: #aaa;
+}
+
+/* Dropdown styling */
+.select-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    z-index: 1000;
+}
+
+/* Options styling */
+#select-options {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#select-options li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#select-options li:hover {
+    background-color: #f0f0f0;
+}
+
+#select-options li.selected {
+    background-color: #e0e0e0;
+}
+
+/* Styling for select all checkbox */
+#select-options li:first-child {
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Selected tags styling */
+.selected-tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.selected-tag {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+
+.selected-tag:hover {
+    background-color: #0056b3;
+}
+
+.selected-tag.remove {
+    display: none;
+}
+
+/* Show all selected items in a box */
+.select-input.full-selected {
+    display: flex;
+    flex-direction: column;
+}
+
+.select-input.full-selected input[type="text"] {
+    order: 1;
+    margin-top: 5px;
+}
+
+/* Hide dropdown when clicked outside */
+body:not(.dropdown-open) .select-dropdown {
+    display: none;
+}
